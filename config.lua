@@ -8,8 +8,18 @@ lvim.builtin.bufferline.active = false
 lvim.leader = "space"
 lvim.use_icons = true
 vim.opt.relativenumber = true
-vim.opt.wrap = true
-lvim.colorscheme = 'rose-pine-moon'
+-- vim.opt.wrap = true
+lvim.colorscheme = 'tokyonight'
+
+lvim.keys.normal_mode["<leader>g"] = "<cmd>Telescope live_grep<CR>"
+lvim.keys.normal_mode["<leader>r"] = "<cmd>reg<CR>"
+
+lvim.keys.normal_mode["<leader>vv"] = "<cmd>vsplit<CR>"
+lvim.keys.normal_mode["<leader>vq"] = "<C-w>q"
+lvim.keys.normal_mode["<leader>s"] = "<C-w>w"
+
+lvim.keys.visual_mode["<leader>y"] = '"*y'
+
 lvim.plugins = {
   -- color schemes
   {
@@ -22,6 +32,12 @@ lvim.plugins = {
   end,
   },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   --outline
   {
       "simrat39/symbols-outline.nvim",
